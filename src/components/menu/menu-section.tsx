@@ -1,6 +1,13 @@
 import { AnimatedCard } from "./animated-card";
 import { BoilBuilder } from "./boil-builder";
-import { macAndCheese, shareables, includedSides, premiumSides } from "@/data/menu";
+import { ProteinChoiceCard } from "./protein-choice-card";
+import {
+  macAndCheeseProteins,
+  friedRiceProteins,
+  catchAndCrunch,
+  regularSides,
+  premiumAddOns,
+} from "@/data/menu";
 
 export function MenuSection() {
   return (
@@ -27,32 +34,27 @@ export function MenuSection() {
             <BoilBuilder />
           </AnimatedCard>
 
-          <AnimatedCard delay={0.1}>
-            <div className="mb-5 flex items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-4">
-              <span className="text-3xl">🧀</span>
-              <h3 className="flex-1 text-2xl text-brand-black dark:text-brand-cream">
-                Mac &amp; Cheese
-              </h3>
-              <span className="text-xs font-semibold uppercase tracking-wider text-brand-red-dark dark:text-brand-red">
-                3 Protein Options
-              </span>
-            </div>
-            <ul className="divide-y divide-dotted divide-brand-gold/30">
-              {macAndCheese.map((item) => (
-                <li key={item} className="py-2.5 text-brand-black/85 dark:text-brand-tan">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </AnimatedCard>
+          <ProteinChoiceCard
+            icon="🧀"
+            title="Mac & Cheese"
+            options={macAndCheeseProteins}
+            delay={0.1}
+          />
+
+          <ProteinChoiceCard
+            icon="🍚"
+            title="Fried Rice"
+            options={friedRiceProteins}
+            delay={0.12}
+          />
 
           <AnimatedCard delay={0.15}>
             <div className="mb-5 flex items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-4">
               <span className="text-3xl">🍤</span>
-              <h3 className="text-2xl text-brand-black dark:text-brand-cream">Shareable</h3>
+              <h3 className="text-2xl text-brand-black dark:text-brand-cream">Catch &amp; Crunch</h3>
             </div>
             <ul className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2">
-              {shareables.map((item) => (
+              {catchAndCrunch.map((item) => (
                 <li
                   key={item}
                   className="py-2 text-sm text-brand-black/85 dark:text-brand-tan"
@@ -63,14 +65,17 @@ export function MenuSection() {
             </ul>
           </AnimatedCard>
 
-          <AnimatedCard delay={0.2} className="md:col-span-2 bg-gradient-to-br from-brand-red/10 to-transparent">
+          <AnimatedCard delay={0.2} className="bg-gradient-to-br from-brand-red/10 to-transparent">
             <div className="grid gap-8 sm:grid-cols-2">
               <div>
                 <h4 className="mb-4 text-lg uppercase tracking-wider text-brand-gold-light">
                   Included Sides
                 </h4>
+                <p className="mb-3 text-xs italic text-brand-black/60 dark:text-brand-tan/70">
+                  Choose any 2 with every boil
+                </p>
                 <ul className="space-y-2">
-                  {includedSides.map((s) => (
+                  {regularSides.map((s) => (
                     <li
                       key={s.label}
                       className="flex items-center gap-3 text-brand-black/85 dark:text-brand-tan"
@@ -82,10 +87,13 @@ export function MenuSection() {
               </div>
               <div>
                 <h4 className="mb-4 text-lg uppercase tracking-wider text-brand-gold-light">
-                  Premium Add-On Sides
+                  Premium Add-Ons
                 </h4>
+                <p className="mb-3 text-xs italic text-brand-black/60 dark:text-brand-tan/70">
+                  Extra cost, on top of your included sides
+                </p>
                 <ul className="space-y-2">
-                  {premiumSides.map((s) => (
+                  {premiumAddOns.map((s) => (
                     <li
                       key={s.label}
                       className="flex items-center gap-3 text-brand-black/85 dark:text-brand-tan"
@@ -106,3 +114,4 @@ export function MenuSection() {
     </section>
   );
 }
+
