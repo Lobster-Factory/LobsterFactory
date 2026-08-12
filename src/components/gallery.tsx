@@ -7,12 +7,15 @@ import { InstagramIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site";
 
 const posts = [
-  { src: "/gallery/boil-tray.jpg", caption: "Fresh lobster boil" },
+  { src: "/gallery/lobster-boil.jpg", caption: "Fresh lobster boil" },
   { src: "/gallery/king-crab.jpg", caption: "King crab legs" },
-  { src: "/gallery/corn-potatoes.jpg", caption: "Loaded corn & potatoes" },
+  { src: "/gallery/dungeness-crab.jpg", caption: "Dungeness crab" },
+  { src: "/gallery/loaded-boil.jpg", caption: "Loaded corn, potato & sausage" },
+  { src: "/gallery/garlic-butter-shrimp.jpg", caption: "Garlic butter shrimp" },
+  { src: "/gallery/mussels.jpg", caption: "Mussels in sauce" },
+  { src: "/gallery/clams-mussels.jpg", caption: "Clam & mussel boil" },
   { src: "/gallery/lobster-mac.jpg", caption: "Lobster mac & cheese" },
   { src: "/gallery/shrimp-basket.jpg", caption: "Shrimp basket" },
-  { src: "/gallery/cajun-special.jpg", caption: "Cajun house special" },
 ];
 
 function GalleryTile({
