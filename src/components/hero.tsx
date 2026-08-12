@@ -24,11 +24,11 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-50"
+          className="object-cover opacity-70 [filter:brightness(0.55)_contrast(1.15)_saturate(1.15)]"
           onError={() => setImageFailed(true)}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-brand-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/75" />
 
       {[...Array(5)].map((_, i) => (
         <span
