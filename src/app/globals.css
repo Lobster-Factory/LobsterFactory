@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f6ecd8;
+  --foreground: #14100c;
+
+  --color-brand-black: #14100c;
+  --color-brand-charcoal: #211a13;
+  --color-brand-cream: #f6ecd8;
+  --color-brand-tan: #e3d0a4;
+  --color-brand-red: #b5352a;
+  --color-brand-red-dark: #8c2620;
+  --color-brand-gold: #c9a24b;
+  --color-brand-gold-light: #e0c176;
+}
+
+.dark {
+  --background: #14100c;
+  --foreground: #f6ecd8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-black: var(--color-brand-black);
+  --color-brand-charcoal: var(--color-brand-charcoal);
+  --color-brand-cream: var(--color-brand-cream);
+  --color-brand-tan: var(--color-brand-tan);
+  --color-brand-red: var(--color-brand-red);
+  --color-brand-red-dark: var(--color-brand-red-dark);
+  --color-brand-gold: var(--color-brand-gold);
+  --color-brand-gold-light: var(--color-brand-gold-light);
+  --font-display: var(--font-rye);
+  --font-body: var(--font-oswald);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), serif;
+}
+
+::selection {
+  background: var(--color-brand-red);
+  color: var(--color-brand-cream);
+}
+
+@keyframes emberDrift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-2%, -3%, 0) scale(1.05); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.animate-ember {
+  animation: emberDrift 18s ease-in-out infinite;
+}
+
+@keyframes steamRise {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  30% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.6); }
+}
+
+.animate-steam {
+  animation: steamRise 6s ease-in infinite;
+}
