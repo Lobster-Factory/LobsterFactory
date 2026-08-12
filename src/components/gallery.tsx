@@ -1,17 +1,58 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { InstagramIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site";
 
-const placeholderPosts = [
-  { emoji: "🦞", caption: "Fresh lobster boil" },
-  { emoji: "🦀", caption: "King crab legs" },
-  { emoji: "🌽", caption: "Loaded corn & potatoes" },
-  { emoji: "🧀", caption: "Lobster mac & cheese" },
-  { emoji: "🍤", caption: "Shrimp basket" },
-  { emoji: "🌶️", caption: "Cajun house special" },
+const posts = [
+  { src: "/gallery/boil-tray.jpg", caption: "Fresh lobster boil" },
+  { src: "/gallery/king-crab.jpg", caption: "King crab legs" },
+  { src: "/gallery/corn-potatoes.jpg", caption: "Loaded corn & potatoes" },
+  { src: "/gallery/lobster-mac.jpg", caption: "Lobster mac & cheese" },
+  { src: "/gallery/shrimp-basket.jpg", caption: "Shrimp basket" },
+  { src: "/gallery/cajun-special.jpg", caption: "Cajun house special" },
 ];
+
+function GalleryTile({
+  src,
+  caption,
+  delay,
+}: {
+  src: string;
+  caption: string;
+  delay: number;
+}) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.4, delay }}
+      whileHover={{ scale: 1.04 }}
+      className="relative aspect-square overflow-hidden rounded-lg border border-brand-gold/40 bg-gradient-to-br from-brand-black/5 to-brand-red/10 dark:from-brand-black dark:to-brand-red/20"
+    >
+      {!failed ? (
+        <Image
+          src={src}
+          alt={caption}
+          fill
+          sizes="(min-width: 640px) 33vw, 50vw"
+          className="object-cover"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div className="flex h-full flex-col items-center justify-center gap-2 px-3 text-center">
+          <span className="text-3xl">🦞</span>
+          <span className="text-xs text-brand-black/70 dark:text-brand-tan">{caption}</span>
+        </div>
+      )}
+    </motion.div>
+  );
+}
 
 export function Gallery() {
   return (
@@ -32,21 +73,13 @@ export function Gallery() {
         </p>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-          {placeholderPosts.map((post, i) => (
-            <motion.div
+          {posts.map((post, i) => (
+            <GalleryTile
               key={post.caption}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              whileHover={{ scale: 1.04 }}
-              className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg border border-brand-gold/40 bg-gradient-to-br from-brand-black/5 to-brand-red/10 text-center dark:from-brand-black dark:to-brand-red/20"
-            >
-              <span className="text-4xl">{post.emoji}</span>
-              <span className="px-3 text-xs text-brand-black/70 dark:text-brand-tan">
-                {post.caption}
-              </span>
-            </motion.div>
+              src={post.src}
+              caption={post.caption}
+              delay={i * 0.07}
+            />
           ))}
         </div>
 
@@ -64,3 +97,4 @@ export function Gallery() {
     </section>
   );
 }
+

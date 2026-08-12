@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Check, ClipboardCopy, MessageSquareText, Phone } from "lucide-react";
+import { Check, ClipboardCopy, Phone } from "lucide-react";
 import {
   proteins,
   sauces,
@@ -70,7 +70,6 @@ export function BoilBuilder() {
   const hasSelection = summary.length > 0;
 
   const orderText = `${siteConfig.smsBody}\n${summary.join("\n")}`;
-  const smsHref = `sms:${siteConfig.phone}?&body=${encodeURIComponent(orderText)}`;
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(orderText);
@@ -178,12 +177,6 @@ export function BoilBuilder() {
                   className="flex items-center gap-1.5 rounded-md bg-brand-red px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-cream"
                 >
                   <Phone size={13} /> Call to Order
-                </a>
-                <a
-                  href={smsHref}
-                  className="flex items-center gap-1.5 rounded-md border border-brand-gold px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-gold-light"
-                >
-                  <MessageSquareText size={13} /> Text Order
                 </a>
                 <button
                   type="button"
