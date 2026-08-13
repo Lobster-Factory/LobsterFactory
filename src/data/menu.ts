@@ -68,6 +68,5 @@ export const catchAndCrunch = [
   "Shrimp Basket",
   "Chicken Tenders",
   "Cajun Fries",
-  "Yam Fries",
 ];
 
