@@ -6,19 +6,16 @@ import { ImageMarquee } from "@/components/image-marquee";
 const steps = [
   {
     number: 1,
-    icon: "🦞",
     title: "Choose Your Protein",
     text: "Shrimp, mussels, clams, chicken slices, dungeness crab, snow crab legs, lobster, or king crab legs.",
   },
   {
     number: 2,
-    icon: "🌶️",
     title: "Choose Your Sauce",
     text: "Cajun, Garlic Butter, Lemon Pepper, or House Special — pick your spice level too.",
   },
   {
     number: 3,
-    icon: "🍲",
     title: "Choose Your Sides",
     text: "Pick your included sides and any premium add-ons. Then we boil and serve!",
   },
@@ -53,8 +50,7 @@ export function HowItWorks() {
               <span className="absolute -top-5 left-1/2 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border-2 border-brand-gold bg-brand-red font-display text-brand-cream">
                 {step.number}
               </span>
-              <div className="mb-3 mt-3 text-4xl">{step.icon}</div>
-              <h3 className="mb-3 text-xl text-brand-gold-light">
+              <h3 className="mb-3 mt-3 text-xl text-brand-gold-light">
                 {step.title}
               </h3>
               <p className="text-sm font-light text-brand-tan">
