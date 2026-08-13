@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ImageMarquee } from "@/components/image-marquee";
 
 const steps = [
   {
@@ -27,9 +28,10 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="border-y-2 border-brand-gold/60 bg-brand-charcoal py-24"
+      className="relative overflow-hidden border-y-2 border-brand-gold/60 bg-brand-charcoal py-24"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <ImageMarquee />
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
           How It Works
         </p>
