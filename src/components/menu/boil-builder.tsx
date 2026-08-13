@@ -1,8 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Check, ClipboardCopy, Phone } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Check } from "lucide-react";
 import {
   boilProteins,
   mixMatchProteins,
@@ -11,7 +10,7 @@ import {
   regularSides,
   premiumAddOns,
 } from "@/data/menu";
-import { siteConfig } from "@/lib/site";
+import { useOrder } from "./order-context";
 
 type Mode = "individual" | "mixmatch";
 
@@ -86,6 +85,7 @@ const MAX_SIDES = 2;
 const MIX_MATCH_COUNT = 2;
 
 export function BoilBuilder() {
+  const { setSectionLines } = useOrder();
   const [mode, setMode] = useState<Mode>("individual");
   const [individualProtein, setIndividualProtein] = useState<string | null>(null);
   const [mixProteins, setMixProteins] = useState<string[]>([]);
@@ -93,7 +93,6 @@ export function BoilBuilder() {
   const [spice, setSpice] = useState<string | null>(null);
   const [sides, setSides] = useState<string[]>([]);
   const [addOns, setAddOns] = useState<string[]>([]);
-  const [copied, setCopied] = useState(false);
 
   // Reset protein picks when switching modes since the two pools differ
   const selectMode = (next: Mode) => {
@@ -136,14 +135,17 @@ export function BoilBuilder() {
     return parts;
   }, [mode, individualProtein, mixProteins, sauce, spice, sides, addOns]);
 
-  const hasSelection = summary.length > 0;
-  const orderText = `${siteConfig.smsBody}\n${mode === "individual" ? "Individual Boil" : "Mix & Match"}\n${summary.join("\n")}`;
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(orderText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  useEffect(() => {
+    setSectionLines(
+      "boil",
+      summary.length
+        ? [
+            `Single Boil (${mode === "individual" ? "Individual" : "Mix & Match"}):`,
+            ...summary.map((line) => `• ${line}`),
+          ]
+        : []
+    );
+  }, [summary, mode, setSectionLines]);
 
   return (
     <div>
@@ -279,41 +281,6 @@ export function BoilBuilder() {
           </div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {hasSelection && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mt-8 overflow-hidden rounded-lg border border-brand-gold/40 bg-brand-cream/5 p-4"
-          >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-gold-light">
-              Your Order
-            </p>
-            <ul className="mb-4 space-y-1 text-sm text-brand-tan">
-              {summary.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-2">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-1.5 rounded-md bg-brand-red px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-cream"
-              >
-                <Phone size={13} /> Call to Order
-              </a>
-              <button
-                type="button"
-                onClick={handleCopy}
-                className="flex items-center gap-1.5 rounded-md border border-brand-gold/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-tan"
-              >
-                <ClipboardCopy size={13} /> {copied ? "Copied!" : "Copy"}
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

@@ -2,49 +2,40 @@
 
 import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
-import type { MenuOption } from "@/data/menu";
 import { AnimatedCard } from "./animated-card";
 import { useOrder } from "./order-context";
 
-export function ProteinChoiceCard({
-  icon,
-  title,
-  options,
-  sectionKey,
-  delay = 0,
-}: {
-  icon: string;
-  title: string;
-  options: MenuOption[];
-  sectionKey: string;
-  delay?: number;
-}) {
+export function CatchCrunchCard({ items, delay = 0 }: { items: string[]; delay?: number }) {
   const { setSectionLines } = useOrder();
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggle = (label: string) =>
+    setSelected((prev) =>
+      prev.includes(label) ? prev.filter((s) => s !== label) : [...prev, label]
+    );
 
   useEffect(() => {
-    setSectionLines(sectionKey, selected ? [`${title}:`, `• ${selected}`] : []);
-  }, [selected, sectionKey, title, setSectionLines]);
+    setSectionLines(
+      "catchCrunch",
+      selected.length ? ["Catch & Crunch:", ...selected.map((s) => `• ${s}`)] : []
+    );
+  }, [selected, setSectionLines]);
 
   return (
     <AnimatedCard delay={delay}>
       <div className="mb-5 flex items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-4">
-        <span className="text-3xl">{icon}</span>
-        <h3 className="flex-1 text-2xl text-brand-cream">{title}</h3>
-        <span className="text-xs font-semibold uppercase tracking-wider text-brand-red">
-          Choose Your Protein
-        </span>
+        <span className="text-3xl">🍤</span>
+        <h3 className="text-2xl text-brand-cream">Catch &amp; Crunch</h3>
       </div>
-
       <div className="flex flex-wrap gap-2">
-        {options.map((o) => {
-          const active = selected === o.label;
+        {items.map((item) => {
+          const active = selected.includes(item);
           return (
             <button
-              key={o.label}
+              key={item}
               type="button"
               aria-pressed={active}
-              onClick={() => setSelected(active ? null : o.label)}
+              onClick={() => toggle(item)}
               className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition ${
                 active
                   ? "border-brand-red bg-brand-red text-brand-cream shadow-md"
@@ -52,8 +43,7 @@ export function ProteinChoiceCard({
               }`}
             >
               {active && <Check size={13} />}
-              {o.icon && <span>{o.icon}</span>}
-              {o.label}
+              {item}
             </button>
           );
         })}
@@ -61,4 +51,3 @@ export function ProteinChoiceCard({
     </AnimatedCard>
   );
 }
-

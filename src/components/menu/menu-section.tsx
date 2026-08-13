@@ -1,6 +1,9 @@
 import { AnimatedCard } from "./animated-card";
 import { BoilBuilder } from "./boil-builder";
 import { ProteinChoiceCard } from "./protein-choice-card";
+import { CatchCrunchCard } from "./catch-crunch-card";
+import { OrderProvider } from "./order-context";
+import { OrderSummary } from "./order-summary";
 import {
   macAndCheeseProteins,
   friedRiceProteins,
@@ -20,7 +23,8 @@ export function MenuSection() {
           Fresh From The Pot
         </h2>
 
-        <div className="grid gap-7 md:grid-cols-2">
+        <OrderProvider>
+          <div className="grid gap-7 md:grid-cols-2">
           <AnimatedCard className="md:col-span-2">
             <div className="mb-6 flex flex-wrap items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-5">
               <span className="text-3xl">🦞</span>
@@ -38,6 +42,7 @@ export function MenuSection() {
             icon="🧀"
             title="Mac & Cheese"
             options={macAndCheeseProteins}
+            sectionKey="macCheese"
             delay={0.1}
           />
 
@@ -45,25 +50,11 @@ export function MenuSection() {
             icon="🍚"
             title="Fried Rice"
             options={friedRiceProteins}
+            sectionKey="friedRice"
             delay={0.12}
           />
 
-          <AnimatedCard delay={0.15}>
-            <div className="mb-5 flex items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-4">
-              <span className="text-3xl">🍤</span>
-              <h3 className="text-2xl text-brand-cream">Catch &amp; Crunch</h3>
-            </div>
-            <ul className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2">
-              {catchAndCrunch.map((item) => (
-                <li
-                  key={item}
-                  className="py-2 text-sm text-brand-tan"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </AnimatedCard>
+          <CatchCrunchCard items={catchAndCrunch} delay={0.15} />
 
           <AnimatedCard delay={0.2} className="bg-gradient-to-br from-brand-red/10 to-transparent">
             <div className="grid gap-8 sm:grid-cols-2">
@@ -105,7 +96,10 @@ export function MenuSection() {
               </div>
             </div>
           </AnimatedCard>
-        </div>
+          </div>
+
+          <OrderSummary />
+        </OrderProvider>
 
         <p className="mt-12 text-center text-lg tracking-wide text-brand-gold-light">
           ⚓ Thank you for supporting local! We appreciate you. 🦀
