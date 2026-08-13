@@ -5,27 +5,25 @@ export const siteConfig = {
   description:
     "Fresh seafood boils, mac & cheese, and shareables. Fresh ingredients, bold flavors, your boil your way. Call ahead for takeout.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lobsterfactory.example.com",
-  phone: "+15551234567",
-  phoneDisplay: "(555) 123-4567",
+  phone: "+16479069143",
+  phoneDisplay: "(647) 906-9143",
+  phone2: "+14374341917",
+  phone2Display: "(437) 434-1917",
   smsBody: "Hi! I'd like to place a takeout order at Lobster Factory:",
-  email: "hello@lobsterfactory.example.com",
+  email: "lobsterfactory5@gmail.com",
   address: {
-    line1: "123 Harbor St",
-    city: "Your City",
-    state: "ST",
-    zip: "00000",
+    line1: "335 Yonge St",
+    city: "Toronto",
+    state: "ON",
+    zip: "",
   },
-  hours: [
-    { day: "Mon", time: "Closed" },
-    { day: "Tue – Thu", time: "12PM – 9PM" },
-    { day: "Fri – Sat", time: "12PM – 10PM" },
-    { day: "Sun", time: "12PM – 8PM" },
-  ],
+  hours: [{ day: "Every Day", time: "11AM – 11PM" }],
   social: {
     instagram: "https://instagram.com/lobsterfactory",
     facebook: "https://facebook.com/lobsterfactory",
     yelp: "https://yelp.com/biz/lobsterfactory",
   },
   mapsEmbedSrc:
-    "https://maps.google.com/maps?q=123+Harbor+St&t=&z=14&ie=UTF8&iwloc=&output=embed",
+    "https://maps.google.com/maps?q=335+Yonge+St,+Toronto,+ON&t=&z=15&ie=UTF8&iwloc=&output=embed",
 };
+

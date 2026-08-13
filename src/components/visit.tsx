@@ -19,7 +19,8 @@ export function Visit() {
               <MapPin size={18} className="mt-1 shrink-0 text-brand-red" />
               <span>
                 {siteConfig.address.line1}, {siteConfig.address.city},{" "}
-                {siteConfig.address.state} {siteConfig.address.zip}
+                {siteConfig.address.state}
+                {siteConfig.address.zip ? ` ${siteConfig.address.zip}` : ""}
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -36,6 +37,10 @@ export function Visit() {
               <Phone size={18} className="shrink-0 text-brand-red" />
               <a href={`tel:${siteConfig.phone}`} className="hover:text-brand-red">
                 {siteConfig.phoneDisplay}
+              </a>
+              <span className="text-brand-tan/40">/</span>
+              <a href={`tel:${siteConfig.phone2}`} className="hover:text-brand-red">
+                {siteConfig.phone2Display}
               </a>
             </li>
             <li className="flex items-center gap-3">

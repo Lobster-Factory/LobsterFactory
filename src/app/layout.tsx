@@ -64,7 +64,7 @@ const jsonLd = {
     streetAddress: siteConfig.address.line1,
     addressLocality: siteConfig.address.city,
     addressRegion: siteConfig.address.state,
-    postalCode: siteConfig.address.zip,
+    ...(siteConfig.address.zip ? { postalCode: siteConfig.address.zip } : {}),
   },
   sameAs: [
     siteConfig.social.instagram,
@@ -72,6 +72,7 @@ const jsonLd = {
     siteConfig.social.yelp,
   ],
 };
+
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
