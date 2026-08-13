@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 
 const images = [
   "/gallery/lobster-boil.jpg",
@@ -24,7 +25,7 @@ export function ImageMarquee() {
         {loopImages.map((src, i) => (
           <div key={i} className="relative h-full w-[300px] shrink-0 sm:w-[420px]">
             <Image
-              src={src}
+              src={withBasePath(src)}
               alt=""
               fill
               sizes="420px"

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/lib/site";
+import { withBasePath } from "@/lib/base-path";
 
 export function Hero() {
   const [imageFailed, setImageFailed] = useState(false);
@@ -19,7 +20,7 @@ export function Hero() {
 
       {!imageFailed && (
         <Image
-          src="/hero-boil.jpg"
+          src={withBasePath("/hero-boil.jpg")}
           alt="Seafood boil tray with lobster, shrimp, corn and potatoes"
           fill
           priority

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { InstagramIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site";
+import { withBasePath } from "@/lib/base-path";
 
 const posts = [
   { src: "/gallery/lobster-boil.jpg", caption: "Fresh lobster boil" },
@@ -40,7 +41,7 @@ function GalleryTile({
     >
       {!failed ? (
         <Image
-          src={src}
+          src={withBasePath(src)}
           alt={caption}
           fill
           sizes="(min-width: 640px) 33vw, 50vw"
