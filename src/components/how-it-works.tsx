@@ -27,13 +27,13 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="border-y-2 border-brand-gold/60 bg-brand-tan/30 py-24 dark:bg-brand-charcoal"
+      className="border-y-2 border-brand-gold/60 bg-brand-charcoal py-24"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-red-dark dark:text-brand-gold-light">
+        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
           How It Works
         </p>
-        <h2 className="mb-14 text-center text-4xl text-brand-black dark:text-brand-cream md:text-5xl">
+        <h2 className="mb-14 text-center text-4xl text-brand-cream md:text-5xl">
           Build Your Perfect Boil
         </h2>
 
@@ -46,16 +46,16 @@ export function HowItWorks() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
               whileHover={{ y: -8 }}
-              className="relative rounded-xl border border-brand-gold/40 bg-brand-cream/80 p-9 text-center shadow-lg dark:bg-brand-black/40"
+              className="relative rounded-xl border border-brand-gold/40 bg-brand-black/40 p-9 text-center shadow-lg"
             >
               <span className="absolute -top-5 left-1/2 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border-2 border-brand-gold bg-brand-red font-display text-brand-cream">
                 {step.number}
               </span>
               <div className="mb-3 mt-3 text-4xl">{step.icon}</div>
-              <h3 className="mb-3 text-xl text-brand-red-dark dark:text-brand-gold-light">
+              <h3 className="mb-3 text-xl text-brand-gold-light">
                 {step.title}
               </h3>
-              <p className="text-sm font-light text-brand-black/80 dark:text-brand-tan">
+              <p className="text-sm font-light text-brand-tan">
                 {step.text}
               </p>
             </motion.div>

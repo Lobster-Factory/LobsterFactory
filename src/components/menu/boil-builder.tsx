@@ -38,8 +38,8 @@ function Pill({
         active
           ? "border-brand-red bg-brand-red text-brand-cream shadow-md"
           : disabled
-            ? "cursor-not-allowed border-brand-gold/15 bg-brand-black/5 text-brand-black/30 dark:bg-brand-cream/5 dark:text-brand-tan/30"
-            : "border-brand-gold/30 bg-brand-black/5 text-brand-black/80 hover:border-brand-gold dark:bg-brand-cream/5 dark:text-brand-tan"
+            ? "cursor-not-allowed border-brand-gold/15 bg-brand-cream/5 text-brand-tan/30"
+            : "border-brand-gold/30 bg-brand-cream/5 text-brand-tan hover:border-brand-gold"
       }`}
     >
       {active && <Check size={13} />}
@@ -66,18 +66,18 @@ function ModeTab({
       onClick={onClick}
       className={`flex-1 rounded-lg border px-4 py-3 text-left transition ${
         active
-          ? "border-brand-red bg-brand-red/10 dark:bg-brand-red/20"
+          ? "border-brand-red bg-brand-red/20"
           : "border-brand-gold/25 hover:border-brand-gold"
       }`}
     >
       <span
         className={`block text-sm font-semibold uppercase tracking-wide ${
-          active ? "text-brand-red-dark dark:text-brand-red" : "text-brand-black/80 dark:text-brand-tan"
+          active ? "text-brand-red" : "text-brand-tan"
         }`}
       >
         {label}
       </span>
-      <span className="mt-0.5 block text-xs text-brand-black/60 dark:text-brand-tan/70">{sub}</span>
+      <span className="mt-0.5 block text-xs text-brand-tan/70">{sub}</span>
     </button>
   );
 }
@@ -286,12 +286,12 @@ export function BoilBuilder() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="mt-8 overflow-hidden rounded-lg border border-brand-gold/40 bg-brand-black/5 p-4 dark:bg-brand-cream/5"
+            className="mt-8 overflow-hidden rounded-lg border border-brand-gold/40 bg-brand-cream/5 p-4"
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-red-dark dark:text-brand-gold-light">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-gold-light">
               Your Order
             </p>
-            <ul className="mb-4 space-y-1 text-sm text-brand-black/80 dark:text-brand-tan">
+            <ul className="mb-4 space-y-1 text-sm text-brand-tan">
               {summary.map((line) => (
                 <li key={line}>{line}</li>
               ))}
@@ -306,7 +306,7 @@ export function BoilBuilder() {
               <button
                 type="button"
                 onClick={handleCopy}
-                className="flex items-center gap-1.5 rounded-md border border-brand-gold/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-black/70 dark:text-brand-tan"
+                className="flex items-center gap-1.5 rounded-md border border-brand-gold/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-tan"
               >
                 <ClipboardCopy size={13} /> {copied ? "Copied!" : "Copy"}
               </button>

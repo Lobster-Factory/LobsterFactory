@@ -24,8 +24,8 @@ export function ProteinChoiceCard({
     <AnimatedCard delay={delay}>
       <div className="mb-5 flex items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-4">
         <span className="text-3xl">{icon}</span>
-        <h3 className="flex-1 text-2xl text-brand-black dark:text-brand-cream">{title}</h3>
-        <span className="text-xs font-semibold uppercase tracking-wider text-brand-red-dark dark:text-brand-red">
+        <h3 className="flex-1 text-2xl text-brand-cream">{title}</h3>
+        <span className="text-xs font-semibold uppercase tracking-wider text-brand-red">
           Choose Your Protein
         </span>
       </div>
@@ -42,7 +42,7 @@ export function ProteinChoiceCard({
               className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition ${
                 active
                   ? "border-brand-red bg-brand-red text-brand-cream shadow-md"
-                  : "border-brand-gold/30 bg-brand-black/5 text-brand-black/80 hover:border-brand-gold dark:bg-brand-cream/5 dark:text-brand-tan"
+                  : "border-brand-gold/30 bg-brand-cream/5 text-brand-tan hover:border-brand-gold"
               }`}
             >
               {active && <Check size={13} />}

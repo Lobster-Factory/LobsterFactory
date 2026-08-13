@@ -4,17 +4,17 @@ import { siteConfig } from "@/lib/site";
 
 export function Visit() {
   return (
-    <section id="visit" className="bg-brand-cream py-24 dark:bg-brand-black">
+    <section id="visit" className="bg-brand-black py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
         <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.4em] text-brand-red-dark dark:text-brand-gold-light">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
             Visit Us
           </p>
-          <h2 className="mb-8 text-4xl text-brand-black dark:text-brand-cream md:text-5xl">
+          <h2 className="mb-8 text-4xl text-brand-cream md:text-5xl">
             Get Your Boil On
           </h2>
 
-          <ul className="mb-8 space-y-4 text-brand-black/85 dark:text-brand-tan">
+          <ul className="mb-8 space-y-4 text-brand-tan">
             <li className="flex items-start gap-3">
               <MapPin size={18} className="mt-1 shrink-0 text-brand-red" />
               <span>

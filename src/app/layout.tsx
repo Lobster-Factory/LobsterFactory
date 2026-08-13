@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Rye, Oswald } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 
 const rye = Rye({
@@ -78,13 +77,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${rye.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-brand-cream dark:bg-brand-black">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
-        </ThemeProvider>
+      <body className="min-h-full flex flex-col bg-brand-black">
+        {children}
         <Script
           id="restaurant-jsonld"
           type="application/ld+json"

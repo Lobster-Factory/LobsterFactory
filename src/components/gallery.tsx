@@ -36,7 +36,7 @@ function GalleryTile({
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.4, delay }}
       whileHover={{ scale: 1.04 }}
-      className="relative aspect-square overflow-hidden rounded-lg border border-brand-gold/40 bg-gradient-to-br from-brand-black/5 to-brand-red/10 dark:from-brand-black dark:to-brand-red/20"
+      className="relative aspect-square overflow-hidden rounded-lg border border-brand-gold/40 bg-gradient-to-br from-brand-black to-brand-red/20"
     >
       {!failed ? (
         <Image
@@ -50,7 +50,7 @@ function GalleryTile({
       ) : (
         <div className="flex h-full flex-col items-center justify-center gap-2 px-3 text-center">
           <span className="text-3xl">🦞</span>
-          <span className="text-xs text-brand-black/70 dark:text-brand-tan">{caption}</span>
+          <span className="text-xs text-brand-tan">{caption}</span>
         </div>
       )}
     </motion.div>
@@ -61,16 +61,16 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="border-y-2 border-brand-gold/60 bg-brand-tan/30 py-24 dark:bg-brand-charcoal"
+      className="border-y-2 border-brand-gold/60 bg-brand-charcoal py-24"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-red-dark dark:text-brand-gold-light">
+        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
           Fresh Catch
         </p>
-        <h2 className="mb-3 text-center text-4xl text-brand-black dark:text-brand-cream md:text-5xl">
+        <h2 className="mb-3 text-center text-4xl text-brand-cream md:text-5xl">
           Straight From The Boil
         </h2>
-        <p className="mb-12 text-center text-sm text-brand-black/70 dark:text-brand-tan">
+        <p className="mb-12 text-center text-sm text-brand-tan">
           Placeholder feed — connect the Instagram Graph API with a real access token to pull
           live posts here.
         </p>

@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
-  --background: #f6ecd8;
-  --foreground: #14100c;
+  --background: #14100c;
+  --foreground: #f6ecd8;
 
   --color-brand-black: #14100c;
   --color-brand-charcoal: #211a13;
@@ -14,11 +12,6 @@
   --color-brand-red-dark: #8c2620;
   --color-brand-gold: #c9a24b;
   --color-brand-gold-light: #e0c176;
-}
-
-.dark {
-  --background: #14100c;
-  --foreground: #f6ecd8;
 }
 
 @theme inline {

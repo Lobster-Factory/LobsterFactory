@@ -11,12 +11,12 @@ import {
 
 export function MenuSection() {
   return (
-    <section id="menu" className="bg-brand-cream py-24 dark:bg-brand-black">
+    <section id="menu" className="bg-brand-black py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-red-dark dark:text-brand-gold-light">
+        <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
           The Menu
         </p>
-        <h2 className="mb-14 text-center text-4xl text-brand-black dark:text-brand-cream md:text-5xl">
+        <h2 className="mb-14 text-center text-4xl text-brand-cream md:text-5xl">
           Fresh From The Pot
         </h2>
 
@@ -24,10 +24,10 @@ export function MenuSection() {
           <AnimatedCard className="md:col-span-2">
             <div className="mb-6 flex flex-wrap items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-5">
               <span className="text-3xl">🦞</span>
-              <h3 className="flex-1 text-2xl text-brand-black dark:text-brand-cream">
+              <h3 className="flex-1 text-2xl text-brand-cream">
                 Single Boil
               </h3>
-              <span className="rounded-full border border-brand-red/40 bg-brand-red/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-red-dark dark:text-brand-red">
+              <span className="rounded-full border border-brand-red/40 bg-brand-red/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-red">
                 Build Your Perfect Boil
               </span>
             </div>
@@ -51,13 +51,13 @@ export function MenuSection() {
           <AnimatedCard delay={0.15}>
             <div className="mb-5 flex items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-4">
               <span className="text-3xl">🍤</span>
-              <h3 className="text-2xl text-brand-black dark:text-brand-cream">Catch &amp; Crunch</h3>
+              <h3 className="text-2xl text-brand-cream">Catch &amp; Crunch</h3>
             </div>
             <ul className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2">
               {catchAndCrunch.map((item) => (
                 <li
                   key={item}
-                  className="py-2 text-sm text-brand-black/85 dark:text-brand-tan"
+                  className="py-2 text-sm text-brand-tan"
                 >
                   {item}
                 </li>
@@ -71,14 +71,14 @@ export function MenuSection() {
                 <h4 className="mb-4 text-lg uppercase tracking-wider text-brand-gold-light">
                   Included Sides
                 </h4>
-                <p className="mb-3 text-xs italic text-brand-black/60 dark:text-brand-tan/70">
+                <p className="mb-3 text-xs italic text-brand-tan/70">
                   Choose any 2 with every boil
                 </p>
                 <ul className="space-y-2">
                   {regularSides.map((s) => (
                     <li
                       key={s.label}
-                      className="flex items-center gap-3 text-brand-black/85 dark:text-brand-tan"
+                      className="flex items-center gap-3 text-brand-tan"
                     >
                       <span className="text-xl">{s.icon}</span> {s.label}
                     </li>
@@ -89,14 +89,14 @@ export function MenuSection() {
                 <h4 className="mb-4 text-lg uppercase tracking-wider text-brand-gold-light">
                   Premium Add-Ons
                 </h4>
-                <p className="mb-3 text-xs italic text-brand-black/60 dark:text-brand-tan/70">
+                <p className="mb-3 text-xs italic text-brand-tan/70">
                   Extra cost, on top of your included sides
                 </p>
                 <ul className="space-y-2">
                   {premiumAddOns.map((s) => (
                     <li
                       key={s.label}
-                      className="flex items-center gap-3 text-brand-black/85 dark:text-brand-tan"
+                      className="flex items-center gap-3 text-brand-tan"
                     >
                       <span className="text-xl">{s.icon}</span> {s.label}
                     </li>
