@@ -20,6 +20,7 @@ export const siteConfig = {
   hours: [{ day: "Every Day", time: "11AM – 11PM" }],
   social: {
     instagram: "https://instagram.com/lobsterfactory",
+    tiktok: "https://tiktok.com/@lobsterfactory",
     facebook: "https://facebook.com/lobsterfactory",
     yelp: "https://yelp.com/biz/lobsterfactory",
   },
