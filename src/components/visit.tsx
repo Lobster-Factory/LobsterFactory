@@ -1,5 +1,5 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { FacebookIcon, InstagramIcon, TiktokIcon } from "@/components/icons";
+import { InstagramIcon, TiktokIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site";
 
 export function Visit() {
@@ -69,15 +69,6 @@ export function Visit() {
               className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold text-brand-gold-light transition hover:bg-brand-gold hover:text-brand-black"
             >
               <TiktokIcon className="h-4 w-4" />
-            </a>
-            <a
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-gold text-brand-gold-light transition hover:bg-brand-gold hover:text-brand-black"
-            >
-              <FacebookIcon className="h-4 w-4" />
             </a>
           </div>
 

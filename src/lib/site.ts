@@ -21,7 +21,6 @@ export const siteConfig = {
   social: {
     instagram: "https://www.instagram.com/lobsterfactory335/",
     tiktok: "https://tiktok.com/@lobster.factory",
-    facebook: "https://facebook.com/lobsterfactory",
     yelp: "https://yelp.com/biz/lobsterfactory",
   },
   mapsEmbedSrc:

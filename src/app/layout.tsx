@@ -68,7 +68,7 @@ const jsonLd = {
   },
   sameAs: [
     siteConfig.social.instagram,
-    siteConfig.social.facebook,
+    siteConfig.social.tiktok,
     siteConfig.social.yelp,
   ],
 };

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { InstagramIcon } from "@/components/icons";
+import { InstagramIcon, TiktokIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site";
 import { withBasePath } from "@/lib/base-path";
 
@@ -71,10 +71,6 @@ export function Gallery() {
         <h2 className="mb-3 text-center text-4xl text-brand-cream md:text-5xl">
           Straight From The Boil
         </h2>
-        <p className="mb-12 text-center text-sm text-brand-tan">
-          Placeholder feed — connect the Instagram Graph API with a real access token to pull
-          live posts here.
-        </p>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           {posts.map((post, i) => (
@@ -87,7 +83,7 @@ export function Gallery() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
             href={siteConfig.social.instagram}
             target="_blank"
@@ -95,6 +91,14 @@ export function Gallery() {
             className="flex items-center gap-2 rounded-full border-2 border-brand-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-brand-gold-light transition hover:bg-brand-gold hover:text-brand-black"
           >
             <InstagramIcon className="h-4 w-4" /> Follow us on Instagram
+          </a>
+          <a
+            href={siteConfig.social.tiktok}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex items-center gap-2 rounded-full border-2 border-brand-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-brand-gold-light transition hover:bg-brand-gold hover:text-brand-black"
+          >
+            <TiktokIcon className="h-4 w-4" /> Follow us on TikTok
           </a>
         </div>
       </div>
