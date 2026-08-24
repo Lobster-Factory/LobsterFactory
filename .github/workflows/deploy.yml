@@ -32,8 +32,7 @@ jobs:
 
       - name: Build static export
         env:
-          NEXT_PUBLIC_BASE_PATH: /LobsterFactory
-          NEXT_PUBLIC_SITE_URL: https://lobster-factory.github.io/LobsterFactory
+          NEXT_PUBLIC_SITE_URL: https://lobsterfactory.ca
         run: npm run build
 
       - name: Setup Pages
