@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: "Boil & Grill",
   description:
     "Fresh seafood boils, mac & cheese, and shareables. Fresh ingredients, bold flavors, your boil your way. Call ahead for takeout.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lobsterfactory.example.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lobsterfactory.com",
   phone: "+16479069143",
   phoneDisplay: "(647) 906-9143",
   phone2: "+14374341917",
