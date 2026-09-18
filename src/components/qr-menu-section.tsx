@@ -1,6 +1,7 @@
 "use client";
 
 import { QRCodeSVG } from "qrcode.react";
+import { withBasePath } from "@/lib/base-path";
 import { siteConfig } from "@/lib/site";
 
 export function QrMenuSection() {
@@ -14,7 +15,11 @@ export function QrMenuSection() {
           Scan For The Menu
         </h2>
         <div className="rounded-xl border-2 border-brand-gold bg-white p-4 shadow-md">
-          <QRCodeSVG value={`${siteConfig.url}/#menu`} size={160} marginSize={2} />
+          <QRCodeSVG
+            value={`${siteConfig.url}${withBasePath("/menu.png")}`}
+            size={160}
+            marginSize={2}
+          />
         </div>
       </div>
     </section>
