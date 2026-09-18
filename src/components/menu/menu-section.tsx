@@ -1,13 +1,11 @@
 import { AnimatedCard } from "./animated-card";
 import { BoilBuilder } from "./boil-builder";
 import { ProteinChoiceCard } from "./protein-choice-card";
-import { CatchCrunchCard } from "./catch-crunch-card";
 import { OrderProvider } from "./order-context";
 import { OrderSummary } from "./order-summary";
 import {
   macAndCheeseProteins,
   friedRiceProteins,
-  catchAndCrunch,
   regularSides,
   premiumAddOns,
 } from "@/data/menu";
@@ -53,8 +51,6 @@ export function MenuSection() {
             sectionKey="friedRice"
             delay={0.12}
           />
-
-          <CatchCrunchCard items={catchAndCrunch} delay={0.15} />
 
           <AnimatedCard delay={0.2} className="bg-gradient-to-br from-brand-red/10 to-transparent">
             <div className="grid gap-8 sm:grid-cols-2">

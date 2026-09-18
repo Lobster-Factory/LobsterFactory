@@ -53,20 +53,11 @@ export const premiumAddOns: MenuOption[] = [
 export const macAndCheeseProteins: MenuOption[] = [
   { label: "Chicken", icon: "🍗" },
   { label: "Baby Shrimp", icon: "🦐" },
-  { label: "Lobster Chunk", icon: "🦞" },
 ];
 
 export const friedRiceProteins: MenuOption[] = [
   { label: "Seafood", icon: "🦐" },
   { label: "Chicken", icon: "🍗" },
   { label: "Sausage", icon: "🌭" },
-];
-
-export const catchAndCrunch = [
-  "Calamari",
-  "Sweet Potato Fries",
-  "Shrimp Basket",
-  "Chicken Tenders",
-  "Cajun Fries",
 ];
 
