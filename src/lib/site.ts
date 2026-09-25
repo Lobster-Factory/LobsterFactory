@@ -5,10 +5,8 @@ export const siteConfig = {
   description:
     "Fresh seafood boils, mac & cheese, and shareables. Fresh ingredients, bold flavors, your boil your way. Call ahead for takeout.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lobsterfactory.ca",
-  phone: "+16479069143",
-  phoneDisplay: "(647) 906-9143",
-  phone2: "+14374341917",
-  phone2Display: "(437) 434-1917",
+  phone: "+14162059746",
+  phoneDisplay: "(416) 205-9746",
   smsBody: "Hi! I'd like to place a takeout order at Lobster Factory:",
   email: "lobsterfactory5@gmail.com",
   address: {
@@ -17,7 +15,10 @@ export const siteConfig = {
     state: "ON",
     zip: "",
   },
-  hours: [{ day: "Every Day", time: "11AM – 11PM" }],
+  hours: [
+    { day: "Monday – Friday", time: "5 PM – 11 PM" },
+    { day: "Saturday – Sunday", time: "12 PM – 12 AM" },
+  ],
   social: {
     instagram: "https://www.instagram.com/lobsterfactory335/",
     tiktok: "https://tiktok.com/@lobster.factory",

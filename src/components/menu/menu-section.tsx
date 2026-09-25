@@ -1,101 +1,61 @@
+import Image from "next/image";
 import { AnimatedCard } from "./animated-card";
 import { BoilBuilder } from "./boil-builder";
-import { ProteinChoiceCard } from "./protein-choice-card";
 import { OrderProvider } from "./order-context";
 import { OrderSummary } from "./order-summary";
-import {
-  macAndCheeseProteins,
-  friedRiceProteins,
-  regularSides,
-  premiumAddOns,
-} from "@/data/menu";
+import { withBasePath } from "@/lib/base-path";
 
 export function MenuSection() {
   return (
     <section id="menu" className="bg-brand-black py-24">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
-          The Menu
+          Three Simple Steps
         </p>
         <h2 className="mb-14 text-center text-4xl text-brand-cream md:text-5xl">
-          Fresh From The Pot
+          Build Your Bucket
         </h2>
 
         <OrderProvider>
-          <div className="grid gap-7 md:grid-cols-2">
-          <AnimatedCard className="md:col-span-2">
+          <AnimatedCard>
             <div className="mb-6 flex flex-wrap items-center gap-3 border-b-2 border-dashed border-brand-gold/40 pb-5">
               <span className="text-3xl">🦞</span>
               <h3 className="flex-1 text-2xl text-brand-cream">
-                Single Boil
+                Start Your Order
               </h3>
-              <span className="rounded-full border border-brand-red/40 bg-brand-red/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-red">
-                Build Your Perfect Boil
+              <span className="rounded-full border border-brand-gold/40 bg-brand-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-gold-light">
+                Corn + Potatoes Included
               </span>
             </div>
             <BoilBuilder />
           </AnimatedCard>
-
-          <ProteinChoiceCard
-            icon="🧀"
-            title="Mac & Cheese"
-            options={macAndCheeseProteins}
-            sectionKey="macCheese"
-            delay={0.1}
-          />
-
-          <ProteinChoiceCard
-            icon="🍚"
-            title="Fried Rice"
-            options={friedRiceProteins}
-            sectionKey="friedRice"
-            delay={0.12}
-          />
-
-          <AnimatedCard delay={0.2} className="bg-gradient-to-br from-brand-red/10 to-transparent">
-            <div className="grid gap-8 sm:grid-cols-2">
-              <div>
-                <h4 className="mb-4 text-lg uppercase tracking-wider text-brand-gold-light">
-                  Included Sides
-                </h4>
-                <p className="mb-3 text-xs italic text-brand-tan/70">
-                  Choose any 2 with every boil
-                </p>
-                <ul className="space-y-2">
-                  {regularSides.map((s) => (
-                    <li
-                      key={s.label}
-                      className="flex items-center gap-3 text-brand-tan"
-                    >
-                      <span className="text-xl">{s.icon}</span> {s.label}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="mb-4 text-lg uppercase tracking-wider text-brand-gold-light">
-                  Premium Add-Ons
-                </h4>
-                <p className="mb-3 text-xs italic text-brand-tan/70">
-                  Extra cost, on top of your included sides
-                </p>
-                <ul className="space-y-2">
-                  {premiumAddOns.map((s) => (
-                    <li
-                      key={s.label}
-                      className="flex items-center gap-3 text-brand-tan"
-                    >
-                      <span className="text-xl">{s.icon}</span> {s.label}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </AnimatedCard>
-          </div>
-
           <OrderSummary />
         </OrderProvider>
+
+        <div className="mx-auto mt-20 max-w-4xl text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.4em] text-brand-gold-light">
+            Full Menu
+          </p>
+          <h2 className="mb-8 text-3xl text-brand-cream md:text-4xl">
+            Prices At A Glance
+          </h2>
+          <a
+            href={withBasePath("/menu.png")}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Open the full Lobster Factory menu"
+            className="block overflow-hidden rounded-md border border-brand-gold/50 bg-brand-charcoal shadow-2xl transition hover:border-brand-gold"
+          >
+            <Image
+              src={withBasePath("/menu.png")}
+              alt="Lobster Factory menu with seafood buckets, sauces, heat levels, and sides"
+              width={768}
+              height={842}
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="h-auto w-full"
+            />
+          </a>
+        </div>
 
         <p className="mt-12 text-center text-lg tracking-wide text-brand-gold-light">
           ⚓ Thank you for supporting local! We appreciate you. 🦀

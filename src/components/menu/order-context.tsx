@@ -12,8 +12,7 @@ type OrderContextValue = {
 
 const OrderContext = createContext<OrderContextValue | null>(null);
 
-// Fixed display order for the combined summary, regardless of which builder updates last
-const SECTION_ORDER = ["boil", "macCheese", "friedRice", "catchCrunch"];
+const SECTION_ORDER = ["boil"];
 
 export function OrderProvider({ children }: { children: ReactNode }) {
   const [sections, setSections] = useState<Sections>({});

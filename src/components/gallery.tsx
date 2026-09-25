@@ -8,15 +8,27 @@ import { siteConfig } from "@/lib/site";
 import { withBasePath } from "@/lib/base-path";
 
 const posts = [
-  { src: "/gallery/lobster-boil.jpg", caption: "Fresh lobster boil" },
-  { src: "/gallery/king-crab.jpg", caption: "King crab legs" },
-  { src: "/gallery/dungeness-crab.jpg", caption: "Dungeness crab" },
-  { src: "/gallery/loaded-boil.jpg", caption: "Loaded corn, potato & sausage" },
-  { src: "/gallery/garlic-butter-shrimp.jpg", caption: "Garlic butter shrimp" },
-  { src: "/gallery/mussels.jpg", caption: "Mussels in sauce" },
-  { src: "/gallery/clams-mussels.jpg", caption: "Clam & mussel boil" },
-  { src: "/gallery/lobster-mac.jpg", caption: "Lobster mac & cheese" },
-  { src: "/gallery/shrimp-basket.jpg", caption: "Shrimp basket" },
+  { src: "/gallery/new/boil-01.jpg", caption: "Whole lobster boil" },
+  { src: "/gallery/new/boil-04.jpg", caption: "Garlic butter mussels" },
+  { src: "/gallery/new/boil-05.jpg", caption: "Snow crab boil" },
+  { src: "/gallery/new/boil-06.jpg", caption: "Cajun shrimp boil" },
+  { src: "/gallery/new/boil-08.jpg", caption: "Loaded seafood boil" },
+  { src: "/gallery/new/boil-10.jpg", caption: "King crab legs" },
+  { src: "/gallery/new/boil-11.jpg", caption: "Lobster Factory feast" },
+  { src: "/gallery/new/boil-13.jpg", caption: "Dungeness crab boil" },
+  { src: "/gallery/new/boil-17.jpg", caption: "Chicken boil" },
+  { src: "/gallery/new/boil-18.jpg", caption: "Shrimp fried rice" },
+  { src: "/gallery/new/boil-19.jpg", caption: "Mixed seafood boil" },
+  { src: "/gallery/new/boil-21.jpg", caption: "Dungeness crab platter" },
+  { src: "/gallery/new/boil-02.jpg", caption: "Clams in house sauce" },
+  { src: "/gallery/new/boil-07.jpg", caption: "Mussels and vegetables" },
+  { src: "/gallery/new/boil-09.jpg", caption: "Lobster boil platter" },
+  { src: "/gallery/new/boil-12.jpg", caption: "Shrimp and corn boil" },
+  { src: "/gallery/new/boil-14.jpg", caption: "Clam boil platter" },
+  { src: "/gallery/new/boil-15.jpg", caption: "Seafood feast" },
+  { src: "/gallery/new/boil-16.jpg", caption: "Snow crab platter" },
+  { src: "/gallery/new/boil-20.jpg", caption: "Chicken and vegetable boil" },
+  { src: "/gallery/new/boil-22.jpg", caption: "King crab platter" },
 ];
 
 function GalleryTile({
@@ -37,7 +49,7 @@ function GalleryTile({
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.4, delay }}
       whileHover={{ scale: 1.04 }}
-      className="relative aspect-square overflow-hidden rounded-lg border border-brand-gold/40 bg-gradient-to-br from-brand-black to-brand-red/20"
+      className="relative aspect-[5/4] overflow-hidden rounded-lg border border-brand-gold/40 bg-gradient-to-br from-brand-black to-brand-red/20"
     >
       {!failed ? (
         <Image

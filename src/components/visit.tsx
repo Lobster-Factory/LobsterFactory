@@ -38,10 +38,6 @@ export function Visit() {
               <a href={`tel:${siteConfig.phone}`} className="hover:text-brand-red">
                 {siteConfig.phoneDisplay}
               </a>
-              <span className="text-brand-tan/40">/</span>
-              <a href={`tel:${siteConfig.phone2}`} className="hover:text-brand-red">
-                {siteConfig.phone2Display}
-              </a>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} className="shrink-0 text-brand-red" />

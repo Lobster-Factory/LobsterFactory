@@ -6,18 +6,18 @@ import { ImageMarquee } from "@/components/image-marquee";
 const steps = [
   {
     number: 1,
-    title: "Choose Your Protein",
-    text: "Shrimp, mussels, clams, chicken slices, dungeness crab, snow crab legs, lobster, or king crab legs.",
+    title: "Pick Your Bucket",
+    text: "Choose shrimp, shellfish, chicken, lobster, or crab. Every bucket comes with corn and potatoes.",
   },
   {
     number: 2,
     title: "Choose Your Sauce",
-    text: "Cajun, Garlic Butter, Lemon Pepper, or House Special — pick your spice level too.",
+    text: "Cajun, Garlic Butter, Lemon Pepper, or our signature OG Sauce.",
   },
   {
     number: 3,
-    title: "Choose Your Sides",
-    text: "Pick your included sides and any premium add-ons. Then we boil and serve!",
+    title: "Pick Your Heat",
+    text: "Mild, Medium, Hot, or Extra Hot. We cook your bucket fresh to order.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function HowItWorks() {
           How It Works
         </p>
         <h2 className="mb-14 text-center text-4xl text-brand-cream md:text-5xl">
-          Build Your Perfect Boil
+          Build Your Bucket
         </h2>
 
         <div className="grid gap-8 md:grid-cols-3">

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand-banner.jpg", width: 2048, height: 768 }],
     locale: "en_US",
     type: "website",
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/og-image.png"],
+    images: ["/brand-banner.jpg"],
   },
   robots: {
     index: true,
@@ -59,6 +59,20 @@ const jsonLd = {
   priceRange: "$$",
   telephone: siteConfig.phone,
   url: siteConfig.url,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "17:00",
+      closes: "23:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "12:00",
+      closes: "00:00",
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.address.line1,

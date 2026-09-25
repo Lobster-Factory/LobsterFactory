@@ -4,15 +4,18 @@ import Image from "next/image";
 import { withBasePath } from "@/lib/base-path";
 
 const images = [
-  "/gallery/lobster-boil.jpg",
-  "/gallery/king-crab.jpg",
-  "/gallery/dungeness-crab.jpg",
-  "/gallery/loaded-boil.jpg",
-  "/gallery/garlic-butter-shrimp.jpg",
-  "/gallery/mussels.jpg",
-  "/gallery/clams-mussels.jpg",
-  "/gallery/lobster-mac.jpg",
-  "/gallery/shrimp-basket.jpg",
+  "/gallery/new/boil-01.jpg",
+  "/gallery/new/boil-04.jpg",
+  "/gallery/new/boil-05.jpg",
+  "/gallery/new/boil-06.jpg",
+  "/gallery/new/boil-08.jpg",
+  "/gallery/new/boil-10.jpg",
+  "/gallery/new/boil-11.jpg",
+  "/gallery/new/boil-13.jpg",
+  "/gallery/new/boil-17.jpg",
+  "/gallery/new/boil-18.jpg",
+  "/gallery/new/boil-19.jpg",
+  "/gallery/new/boil-21.jpg",
 ];
 
 // Duplicated once so the strip can loop seamlessly at -50% translate
